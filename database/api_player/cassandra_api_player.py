@@ -6,9 +6,7 @@ cluster = Cluster()
 
 session = cluster.connect("tutorialspoint")
 
-
-query_sql = "INSERT INTO table_1 (column_1, column_2, column_3, column_4) VALUES (1,2,'3',4);"
-
+query_sql = "INSERT INTO table_1 (column_1, column_2, column_3) VALUES (2,2,'3');"
 
 query_deco = SimpleStatement(
     query_string=query_sql,
@@ -22,5 +20,3 @@ rows = session.execute('SELECT column_1, column_2, column_3, column_4 FROM table
 
 for row in rows:
     print row.column_1
-
-
